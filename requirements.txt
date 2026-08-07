@@ -1,0 +1,8 @@
+# NuGNN runtime dependencies
+#
+# Platform requirement: Linux x86_64 with NVIDIA CUDA and NCCL.
+# Install the CUDA-enabled PyTorch build appropriate for your system:
+# https://pytorch.org/get-started/locally/
+
+numpy>=2.1,<3
+torch>=2.1,<3
