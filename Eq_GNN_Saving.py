@@ -38,20 +38,8 @@ themaxZ = int(np.max(my_network[:,1])+1)
 my_network_map = network_map_converter(subtract_factor=0)
 
 
-stable_list = np.load(thepath_nuc_data+'stable_input.npy')
-
-ME_storage = np.load(thepath_nuc_data+'ME_storage.npy')
-BE_storage = np.load(thepath_nuc_data+'BE_storage.npy')
-
-Sep_N_storage = np.load(thepath_nuc_data+'Sep_N_storage.npy')
-Sep_2N_storage = np.load(thepath_nuc_data+'Sep_2N_storage.npy')
 Sep_Z_storage = np.load(thepath_nuc_data+'Sep_Z_storage.npy')
 Sep_2Z_storage = np.load(thepath_nuc_data+'Sep_2Z_storage.npy')
-
-bp_storage = np.load(thepath_nuc_data+'bp_storage.npy')
-bm_storage = np.load(thepath_nuc_data+'bm_storage.npy')
-
-Sep_A_storage = np.load(thepath_nuc_data+'Sep_A_storage.npy')
 
         
 the_log_subtract_factor = 37
@@ -62,6 +50,9 @@ the_clip_X_in = 1e-20
 
 the_log_subtract_factor_rate = 26
 the_log_rate_max = 16
+
+the_label_log_offset = 17.0
+the_label_zero_threshold = 1e-15
 
 
 print('input_del_t_T_rho loading starts')
@@ -84,7 +75,7 @@ rates_TF = True
 
 X_Sep_Z_TF = True; X_Sep_2Z_TF = True
 
-    
+
 print('data_normalization_XRB starts')
 
 guess_TF = False
@@ -139,6 +130,13 @@ np.savez(
     num_classes=num_classes,
     clip_X_in=the_clip_X_in,
     log_subtract_factor=the_log_subtract_factor,
+    log_flux_min=the_log_flux_min,
+    log_flux_max=the_log_flux_max,
+    log_rate_min=-the_log_subtract_factor_rate,
+    log_rate_max=the_log_rate_max,
+    label_log_offset=the_label_log_offset,
+    label_norm_factor=the_log_subtract_factor,
+    label_zero_threshold=the_label_zero_threshold,
     cut1_val=cut1_val,
     cut2_val=cut2_val,
 )

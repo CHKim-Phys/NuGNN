@@ -1,6 +1,6 @@
 # NuGNN
 
-This repository contains the codes and example data for the paper "NuGNN: a Graph Neural Network for Nuclear Reaction Network Equations" by C. H. Kim et al. (arXiv:2606.04491). It includes preprocessing of raw data and multi-GPU training of a graph neural network. Additional files and documents will be updated in future. Please refer to the paper for more details. 
+This repository contains the codes for the paper "NuGNN: a Graph Neural Network for Nuclear Reaction Network Equations" by C. H. Kim et al. (arXiv:2606.04491). It includes preprocessing, architectures, multi-GPU training, and required functions. Please refer to the paper for more details. Example data can be shared upon request. 
 
 
 ## Requirements
